@@ -133,7 +133,9 @@ details = {
     }
 }
 
-os.makedirs("details", exist_ok=True)
+base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+details_dir = os.path.join(base_dir, "details")
+os.makedirs(details_dir, exist_ok=True)
 
 for filename, data in details.items():
     content = f"""# {data['title']}
@@ -149,6 +151,6 @@ for filename, data in details.items():
 ---
 [← Back to README](../README.md)
 """
-    with open(f"details/{filename}.md", "w", encoding="utf-8") as f:
+    with open(os.path.join(details_dir, f"{filename}.md"), "w", encoding="utf-8") as f:
         f.write(content)
-    print(f"Generated details/{filename}.md")
+    print(f"Generated {os.path.join(details_dir, f'{filename}.md')}")
