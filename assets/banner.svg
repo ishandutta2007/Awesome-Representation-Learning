@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#070b19" />
+      <stop offset="100%" stop-color="#02050f" />
+    </linearGradient>
+
+    <!-- Node Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Linear Gradients for Shapes -->
+    <linearGradient id="primary-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#4f46e5" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+
+    <linearGradient id="accent-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    /* CSS Animations for Dynamic Aspect */
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; filter: drop-shadow(0 0 12px #8b5cf6); }
+    }
+    @keyframes pulse-cyan {
+      0%, 100% { transform: scale(1); opacity: 0.7; }
+      50% { transform: scale(1.2); opacity: 1; filter: drop-shadow(0 0 12px #06b6d4); }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(2deg); }
+    }
+    @keyframes dash {
+      to {
+        stroke-dashoffset: -40;
+      }
+    }
+    @keyframes morph {
+      0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+      50% { border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%; }
+    }
+
+    .node-p1 { animation: pulse 4s infinite ease-in-out; transform-origin: 950px 150px; }
+    .node-p2 { animation: pulse-cyan 5s infinite ease-in-out; transform-origin: 1050px 280px; }
+    .node-p3 { animation: pulse 6s infinite ease-in-out; transform-origin: 850px 260px; }
+    
+    .floating-group { animation: float 6s infinite ease-in-out; }
+    
+    .connection-line {
+      stroke: url(#primary-grad);
+      stroke-width: 1.5;
+      stroke-dasharray: 8, 4;
+      animation: dash 2s linear infinite;
+    }
+    
+    .text-title {
+      font-family: 'Outfit', 'Inter', system-ui, sans-serif;
+      font-weight: 800;
+      font-size: 56px;
+      fill: #ffffff;
+      letter-spacing: -1px;
+    }
+
+    .text-subtitle {
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      fill: #94a3b8;
+      letter-spacing: 4px;
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" />
+
+  <!-- Animated Latent Space Network Representation -->
+  <g class="floating-group">
+    <!-- Connecting dashed lines -->
+    <line x1="850" y1="260" x2="950" y2="150" class="connection-line" />
+    <line x1="950" y1="150" x2="1050" y2="280" class="connection-line" />
+    <line x1="850" y1="260" x2="1050" y2="280" class="connection-line" />
+    <line x1="750" y1="180" x2="850" y2="260" class="connection-line" />
+    <line x1="750" y1="180" x2="950" y2="150" class="connection-line" />
+
+    <!-- Static Background Grid Nodes -->
+    <circle cx="750" cy="180" r="6" fill="#475569" opacity="0.5" />
+    <circle cx="1120" cy="160" r="4" fill="#475569" opacity="0.3" />
+    <circle cx="900" cy="330" r="5" fill="#475569" opacity="0.4" />
+
+    <!-- Pulsating Latent Nodes (Feature Points) -->
+    <circle class="node-p1" cx="950" cy="150" r="18" fill="url(#primary-grad)" filter="url(#glow)" />
+    <circle class="node-p2" cx="1050" cy="280" r="14" fill="url(#accent-grad)" filter="url(#glow)" />
+    <circle class="node-p3" cx="850" cy="260" r="16" fill="url(#primary-grad)" filter="url(#glow)" />
+    
+    <!-- Node Centers -->
+    <circle cx="950" cy="150" r="6" fill="#ffffff" />
+    <circle cx="1050" cy="280" r="5" fill="#ffffff" />
+    <circle cx="850" cy="260" r="5" fill="#ffffff" />
+  </g>
+
+  <!-- Typography & Branding -->
+  <g transform="translate(100, 170)">
+    <!-- Decorative Tag -->
+    <rect x="0" y="-85" width="220" height="28" rx="6" fill="#312e81" opacity="0.6" stroke="#4f46e5" stroke-width="1"/>
+    <text x="15" y="-66" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#a5b4fc" letter-spacing="1.5">AWESOME REPOSITORY</text>
+
+    <!-- Main Title -->
+    <text class="text-title" x="0" y="-10">
+      <tspan fill="url(#primary-grad)">Representation</tspan> Learning
+    </text>
+    
+    <!-- Subtitle -->
+    <text class="text-subtitle" x="0" y="35">HISTORY • PROGRESSION • APPLICATIONS</text>
+  </g>
+
+  <!-- Decorative border line -->
+  <rect x="0" y="395" width="1200" height="5" fill="url(#primary-grad)" />
+</svg>
