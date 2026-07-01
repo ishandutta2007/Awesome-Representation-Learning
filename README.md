@@ -94,3 +94,14 @@ Deploying and scaling representation learning frameworks across industrial infra
 To advance this documentation repository, structural setup, or architectural deployment pipeline, consider exploring these adjacent development pathways:
 * Build a **Python code snippet using PyTorch** illustrating how to implement a basic InfoNCE contrastive loss loop over a pair of forward-pass embedding tensors.
 
+##  Star History
+<div align="center">
+<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-Representation-Learning&type=date&legend=bottom-right">
+<picture>
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Representation-Learning&type=date&theme=dark&legend=bottom-right" />
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Representation-Learning&type=date&legend=bottom-right" />
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Representation-Learning&type=date&legend=bottom-right" />
+</picture>
+</a>
+</div>
+
