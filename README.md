@@ -9,7 +9,7 @@ Representation Learning—also known as Feature Learning—is a foundational par
 
 The historical trajectory of Representation Learning reflects a structural progression away from rigid, human-engineered descriptors to end-to-end deep spatial hierarchies, multi-modal contrastive spaces, and unified self-supervised token systems.
 
-```
+```mermaid
 [Hand-Crafted Descriptors (Pre-2012)] ───> [Supervised End-to-End (2012-2018)] ───> [Self-Supervised & Foundation (2019-Present)](SIFT, HOG, Manual Feature Tuning)          (Deep Hierarchical CNNs & LSTMs)             (Masked Pretext Tasks & Token Alignment)
 ```
 *   **The Hand-Crafted Feature Engineering Era (Traditional ML, Pre-2012)**
