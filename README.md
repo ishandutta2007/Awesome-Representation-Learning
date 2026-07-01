@@ -27,21 +27,21 @@ The historical trajectory of Representation Learning reflects a structural progr
 
 Representation learning frameworks are strictly categorized based on the underlying mathematical loss functions and geometric structures they deploy to organize the latent space.
 
-### A. Supervised Discriminative Representation
-*   **Mechanism:** Maps input objects into discrete categorical zones guided by human-annotated target labels. The network calculates a Softmax cross-entropy loss over a fixed index of classes, pulling identical categories together while driving separate classes apart.
-*   **Application:** Standard layout for specialized classification networks (e.g., ResNet, early vision models).
+- ### A. Supervised Discriminative Representation
+	*   **Mechanism:** Maps input objects into discrete categorical zones guided by human-annotated target labels. The network calculates a Softmax cross-entropy loss over a fixed index of classes, pulling identical categories together while driving separate classes apart.
+	*   **Application:** Standard layout for specialized classification networks (e.g., ResNet, early vision models).
 
-### B. Contrastive Joint-Embedding Representation (CLIP/SimCLR)
-*   **Mechanism:** Formulates feature extraction as a multi-dimensional semantic alignment task. It pairs an input with an alternative view or another modality (e.g., an image matched with its text caption), applying the **InfoNCE or Sigmoid loss function** to maximize the vector dot product of matched pairs while aggressively repelling mismatched pairs.
-*   **Pros:** Natively unlocks open-vocabulary zero-shot classification and cross-modal semantic search, mapping text and pixels into a single shared coordinate sphere.
+- ### B. Contrastive Joint-Embedding Representation (CLIP/SimCLR)
+	*   **Mechanism:** Formulates feature extraction as a multi-dimensional semantic alignment task. It pairs an input with an alternative view or another modality (e.g., an image matched with its text caption), applying the **InfoNCE or Sigmoid loss function** to maximize the vector dot product of matched pairs while aggressively repelling mismatched pairs.
+	*   **Pros:** Natively unlocks open-vocabulary zero-shot classification and cross-modal semantic search, mapping text and pixels into a single shared coordinate sphere.
 
-### C. Predictive Autoencoding / Reconstruction (MAE/BERT)
-*   **Mechanism:** Randomly masks or deletes up to 15% to 75% of incoming sequence tokens or visual pixel patches. The model's hidden layers must exploit surrounding structural boundaries, context clues, and spatial rules to mathematically reconstruct the original missing parameters.
-*   **Pros:** The primary engine driving modern foundation models, forcing the network to internalize robust real-world logic patterns without manual human tagging loops.
+- ### C. Predictive Autoencoding / Reconstruction (MAE/BERT)
+	*   **Mechanism:** Randomly masks or deletes up to 15% to 75% of incoming sequence tokens or visual pixel patches. The model's hidden layers must exploit surrounding structural boundaries, context clues, and spatial rules to mathematically reconstruct the original missing parameters.
+	*   **Pros:** The primary engine driving modern foundation models, forcing the network to internalize robust real-world logic patterns without manual human tagging loops.
 
-### D. Information-Maximization (Non-Contrastive / VICReg)
-*   **Mechanism:** Bypasses negative samples entirely to prevent representation space collapse (where the model maps all inputs to a single static vector). It applies strict variance-covariance regularization constraints across the embedding dimensions.
-*   **Pros:** Mathematically forces the network to utilize its entire latent channel capacity, decorrelating dimensions to ensure highly diverse feature extraction.
+- ### D. Information-Maximization (Non-Contrastive / VICReg)
+	*   **Mechanism:** Bypasses negative samples entirely to prevent representation space collapse (where the model maps all inputs to a single static vector). It applies strict variance-covariance regularization constraints across the embedding dimensions.
+	*   **Pros:** Mathematically forces the network to utilize its entire latent channel capacity, decorrelating dimensions to ensure highly diverse feature extraction.
 
 ---
 
